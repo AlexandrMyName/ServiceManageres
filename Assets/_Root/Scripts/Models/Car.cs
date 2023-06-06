@@ -3,15 +3,24 @@ using System.Numerics;
 
 namespace Game.Models
 {
-    internal class Car 
+    internal class Car : IUpgradable
     {
-        private float _speed;
-       
+         
+        private readonly float _defaultSpeed;
         public Car(float speed)
         {
-            _speed = speed;
-            
+            _defaultSpeed = speed;
+             
+            Speed = speed;
         }
-        public float GetSpeed() => _speed;
+
+        public float Speed { get; set; }
+
+        public float GetSpeed() => Speed;
+
+        public void Restore()
+        {
+             Speed = _defaultSpeed;
+        }
     }
 }

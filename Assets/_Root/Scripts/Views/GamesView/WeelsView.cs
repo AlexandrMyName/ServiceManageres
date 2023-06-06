@@ -9,7 +9,7 @@ namespace UI
     internal class WeelsView : MonoBehaviour
     {
         [SerializeField] private GameObject [] _weels;
-        [SerializeField] private float _speedWeel = 4f;
+        [SerializeField] private float _speedWeel = 1f;
         private IReadOnlySubscriptionProperty<float> _diff;
 
          

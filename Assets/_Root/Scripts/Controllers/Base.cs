@@ -1,3 +1,4 @@
+using Game.Models;
 using System;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -9,6 +10,7 @@ namespace Game.Logics
     {
         private List<GameObject> _gameobjects;
         private List<Base> _controllers;
+        protected List<IRepository> _repositories;
 
         
         public void Dispose()
@@ -19,6 +21,10 @@ namespace Game.Logics
             if (_gameobjects != null)
                  foreach (var gameobject in _gameobjects)
                          GameObject.Destroy(gameobject);
+
+            if(_repositories != null)
+                foreach(IRepository repository in _repositories)
+                    repository?.Dispose();
 
             _gameobjects?.Clear();
             _controllers?.Clear();
@@ -40,6 +46,11 @@ namespace Game.Logics
                 _controllers = new List<Base>();
 
             _controllers.Add(controller);
+        }
+        protected void AddRepository(IRepository repository)
+        {
+            _repositories ??= new List<IRepository>();
+            _repositories.Add(repository);
         }
 
     }

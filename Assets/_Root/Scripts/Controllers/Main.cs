@@ -13,6 +13,7 @@ namespace Game.Logics
         private MenuConroller _menuCntrl;
         private SettingsController _settingsController;
         private GameController _gameController;
+        private GarageController _garageController;
         private Transform _placeForUI;
         private Profile _profile;
 
@@ -39,24 +40,35 @@ namespace Game.Logics
                     _menuCntrl = new MenuConroller(_placeForUI, _profile);
                     _settingsController?.Dispose();
                     _gameController?.Dispose();
-                        break;
+                    _garageController?.Dispose();
+                    break;
 
                 case GameState.Settings:
                     Debug.Log("To Settings ");
                     _settingsController = new SettingsController(_placeForUI, _profile);
                     _menuCntrl?.Dispose();
                     _gameController?.Dispose();
+                    _garageController?.Dispose();
                     break;
                 case GameState.Game:
                     _gameController = new GameController(_profile,_placeForUI);
                     _menuCntrl?.Dispose();
                     _settingsController?.Dispose();
-                        break;
-
-                    default:
+                    _garageController?.Dispose();
+                    break;
+                case GameState.Garage:
                     _menuCntrl?.Dispose();
                     _settingsController?.Dispose();
                     _gameController?.Dispose();
+                    _garageController = new GarageController(_placeForUI, _profile);
+                    break;
+
+
+                default:
+                    _menuCntrl?.Dispose();
+                    _settingsController?.Dispose();
+                    _gameController?.Dispose();
+                    _garageController?.Dispose();
                     break;
 
             }

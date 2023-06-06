@@ -19,6 +19,7 @@ namespace UI
            _view = LoadView(placeForUI);
             _view.InitStartButton(InitStart);
             _view.InitSettingtButton(InitSettings);
+            _view.InitGarageButton(InitGarage);
         }
         private Menu LoadView(Transform container = null)
         {
@@ -29,5 +30,6 @@ namespace UI
         }
         private void InitStart() => _profile._currentGameState.Value = GameState.Game;
         private void InitSettings() => _profile._currentGameState.Value = GameState.Settings;
+        private void InitGarage() => _profile._currentGameState.Value = GameState.Garage;
     }
 }

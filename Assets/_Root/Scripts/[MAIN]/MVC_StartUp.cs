@@ -25,7 +25,7 @@ namespace Game
             _managerForAdv.ShowFullScreenAdv();
 
 
-            _profile = new Profile(GameState.Menu);
+            _profile = new Profile(GameState.Menu,1);
             _mainCntrl = new Main(_placeForUI, _profile);
         }
         private void OnDestroy()

@@ -49,7 +49,7 @@ MonoBehaviour:
   _weels:
   - {fileID: 7534743100220771197}
   - {fileID: 7534743100627442043}
-  _speedWeel: 4
+  _speedWeel: 1
 --- !u!1 &7534743100220771197
 GameObject:
   m_ObjectHideFlags: 0
