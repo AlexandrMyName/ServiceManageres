@@ -14,13 +14,7 @@ namespace Game.Models
             _car = new Car(carSpeed);
             _currentGameState = new SubscriptionProperty<GameState>();
             _inventory = new Inventory();
-            
-            
         }
-        public Profile(GameState gameState, float carSpeed) : this(carSpeed)
-        {
-            _currentGameState.Value = gameState;
-
-        }
+        public Profile(GameState gameState, float carSpeed) : this(carSpeed) =>_currentGameState.Value = gameState;
     }
 }

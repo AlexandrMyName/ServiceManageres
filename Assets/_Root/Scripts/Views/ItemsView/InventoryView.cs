@@ -19,7 +19,6 @@ namespace UI
             Clear();
 
             foreach(var itemCnf in itemsCollection)
-            
                 _itemViews[itemCnf.Id] = CreateItemView( itemCnf, itemClicked);
             
         }

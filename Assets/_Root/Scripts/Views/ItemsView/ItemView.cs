@@ -16,10 +16,8 @@ namespace UI
         [SerializeField] private GameObject _unselectedBackGround;
 
 
-        private void OnDestroy()
-        {
-            DeInit();
-        }
+        private void OnDestroy() =>DeInit();
+         
         public void Init(IItem item, UnityAction clickAction)
         {
             _text.text = item.Info.Title;

@@ -28,6 +28,7 @@ namespace Game.Logics
 
             _gameobjects?.Clear();
             _controllers?.Clear();
+            _repositories?.Clear();
             OnDisposable();
         }
 

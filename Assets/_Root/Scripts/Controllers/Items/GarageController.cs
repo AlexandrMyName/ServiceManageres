@@ -12,7 +12,7 @@ namespace Game.Logics
     internal class GarageController : Base
     {
         private ResourcesPath _pathView = new ResourcesPath("Prefabs/Inventory/GarageView");
-        private ResourcesPath _dataSourcePath = new ResourcesPath("Configs/Items/UpgradeItems/UpgradeItemDataSource");
+        private ResourcesPath _dataSourcePath = new ResourcesPath("Configs/Items/UpgradeItemDataSource");
 
         private GarageView _view;
         private Profile _profile;
@@ -26,8 +26,8 @@ namespace Game.Logics
         {
             _profile = profile;
             _upgradeRepository = CreateRepository(placeForUI);
-            
             _inventoryController = CreateInventoryController(placeForUI);
+
             _view = LoadView(placeForUI);
             _view.Init(Apply,Back);
         }
@@ -48,7 +48,6 @@ namespace Game.Logics
         }
         private void Apply()
         {
-           
             _profile._car.Restore();
 
             UpgradeWithEquieppedItems(_profile._car,_profile._inventory.Equippeditems, _upgradeRepository.Items);

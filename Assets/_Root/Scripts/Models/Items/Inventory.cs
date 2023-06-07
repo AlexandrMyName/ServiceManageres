@@ -8,11 +8,10 @@ namespace Game.Models
     {
         
         private readonly List<string> _equieppedItems = new List<string>(); 
-        IReadOnlyList<string> IInventoryModel.Equippeditems => _equieppedItems;
+        public IReadOnlyList<string> Equippeditems => _equieppedItems;
 
         public bool IsEquipped(string itemId) =>_equieppedItems.Contains(itemId);
-       
-
+ 
         public void EquipItem(string itemId)
         {
            if(!IsEquipped(itemId))
@@ -23,9 +22,6 @@ namespace Game.Models
         {
             if (!IsEquipped(itemId)) return;
                 _equieppedItems.Remove(itemId);
-
-
-             
         }
     }
 }
